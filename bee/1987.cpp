@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-void fastio();
+#define __ ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 int main(){
-    fastio();
+    __
     int s(int n);
     int tc,num,sum=0;
     while(cin>>tc>>num){
@@ -17,10 +17,6 @@ int main(){
     }
     
 
-}
-void fastio(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
 }
 int s(int num){
         int sum=0;
