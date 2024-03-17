@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define __         ios_base::sync_with_stdio(0); cin.tie(0) ; cout.tie(0);
-#define int        long long
+#define ll         long long
+#define int        ll
 #define endl       "\n"
-#define w(x)       int x; cin>>x; while(x--)
 #define f(i,x)     for(int i=0;i<x;i++)
 #define pb         push_back
 #define pob        pop_back
@@ -21,9 +21,16 @@ using namespace std;
 //    #endif
 //}
  
+void solve(){
+    
+}
  
 signed main(){
     __
     //IO();
-    
+    int tc=1;
+    //cin>>tc;
+    while(tc--){
+     solve();
+    }
 }
