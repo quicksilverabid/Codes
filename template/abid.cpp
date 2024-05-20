@@ -10,6 +10,7 @@ using namespace std;
 #define mp         make_pair
 #define deb(x)     cout<<#x<<" = "<<x<<endl;
 #define all(x)     x.begin(),x.end()
+#define allr(x)    x.rbegin(),x.rend()
 #define sz(x)      (int) x.size()
 #define fi         first
 #define se         second
@@ -22,15 +23,15 @@ using namespace std;
 //}
  
 void solve(){
-    
+	
 }
  
 signed main(){
-    __
-    //IO();
-    int tc=1;
-    //cin>>tc;
-    while(tc--){
-     solve();
-    }
+	__
+	//IO();
+	int tc=1;
+	//cin>>tc;
+	while(tc--){
+	 solve();
+	}
 }
