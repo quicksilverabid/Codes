@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Dashboard specific styles */
+        .dashboard-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        .card-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        .card-status {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .graph-container {
+            height: 50px;
+            margin-top: 10px;
+        }
+        .graph-placeholder {
+            height: 50px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="app-name">Smart Agriculture System</div>
+        <div class="farm-info">Farm Name: Green Acres Farm</div>
+        <div class="top-bar-actions">
+            <a href="#" title="Notifications">🔔 (3)</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Welcome, Farmer John!</h1>
+        
+        <div class="dashboard-grid">
+            
+            <!-- Soil Moisture Card -->
+            <div class="card">
+                <div class="card-title">Soil Moisture</div>
+                <div class="card-value">45%</div>
+                <div class="card-status status-normal">Status: Normal</div>
+                <div class="graph-container"><canvas id="soilMoistureChart"></canvas></div>
+            </div>
+
+            <!-- Temperature Card -->
+            <div class="card">
+                <div class="card-title">Temperature</div>
+                <div class="card-value">29°C</div>
+                <div class="card-status status-warning">Status: Warning (High)</div>
+                <div class="graph-placeholder">Graph: Last 7 Days Trend</div>
+            </div>
+
+            <!-- Humidity Card -->
+            <div class="card">
+                <div class="card-title">Humidity</div>
+                <div class="card-value">70%</div>
+                <div class="card-status status-normal">Status: Normal</div>
+                <div class="graph-placeholder">Graph: Last 7 Days Trend</div>
+            </div>
+
+            <!-- Crop Health Card -->
+            <div class="card">
+                <div class="card-title">Crop Health</div>
+                <div class="card-value">85%</div>
+                <div class="card-status status-normal">Status: Normal</div>
+                <div class="graph-placeholder">Graph: Last 7 Days Trend</div>
+            </div>
+
+            <!-- Water Recommendation Card -->
+            <div class="card" onclick="window.location.href='irrigation_recommendation.html'" style="cursor: pointer;">
+                <div class="card-title">Water Recommendation</div>
+                <div class="card-value">20 mm</div>
+                <div class="card-status status-critical">Action Required: Check Recommendation</div>
+                <p style="font-size: 0.9em; color: #6c757d;">Click for details</p>
+            </div>
+
+            <!-- Disease Alerts Card -->
+            <div class="card" onclick="window.location.href='disease_alerts.html'" style="cursor: pointer;">
+                <div class="card-title">Disease Alerts</div>
+                <div class="card-value">1 New Alert</div>
+                <div class="card-status status-critical">Status: Critical</div>
+                <p style="font-size: 0.9em; color: #6c757d;">Leaf Blight Detected</p>
+            </div>
+
+            <!-- Weather Forecast Card -->
+            <div class="card">
+                <div class="card-title">Weather Forecast</div>
+                <div class="card-value">Light Rain</div>
+                <div class="card-status status-normal">Status: Expected</div>
+                <p style="font-size: 0.9em; color: #6c757d;">Tomorrow: Sunny, 32°C</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Soil Moisture Chart (Line Chart)
+            const soilMoistureCtx = document.getElementById('soilMoistureChart');
+            if (soilMoistureCtx) {
+                createLineChart(soilMoistureCtx, [50, 48, 45, 42, 45, 46, 45], 'Soil Moisture (%)');
+            }
+        });
+    </script>
+</body>
+</html>

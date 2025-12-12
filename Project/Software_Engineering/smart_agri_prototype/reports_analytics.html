@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .chart-container {
+            height: 300px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="app-name">Smart Agriculture System</div>
+        <div class="farm-info">Reports & Analytics</div>
+        <div class="top-bar-actions">
+            <a href="farmer_dashboard.html">Farmer View</a>
+            <a href="admin_dashboard.html">Admin View</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Reports & Analytics</h1>
+
+        <div class="card">
+            <div class="card-title">Crop Yield Report (Monthly)</div>
+            <div class="chart-container">
+                <canvas id="yieldChart"></canvas>
+            </div>
+            <p><strong>Summary:</strong> Yield for Rice crop increased by 5% this month compared to the previous month.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Water Usage Graph</div>
+            <div class="chart-container">
+                <canvas id="waterUsageChart"></canvas>
+            </div>
+            <p><strong>Summary:</strong> Peak water usage observed during the 1st week of the month due to high temperatures.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Disease Occurrence Chart</div>
+            <div class="chart-container" style="max-width: 400px; margin: 0 auto;">
+                <canvas id="diseaseChart"></canvas>
+            </div>
+            <p><strong>Summary:</strong> Leaf Blight accounts for 60% of all reported disease cases this quarter.</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Crop Yield Report (Bar Chart)
+            const yieldCtx = document.getElementById('yieldChart');
+            if (yieldCtx) {
+                createBarChart(yieldCtx, [120, 126, 132, 138], ['Jan', 'Feb', 'Mar', 'Apr'], 'Monthly Yield (Tons/Acre)');
+            }
+
+            // Water Usage Graph (Line Chart)
+            const waterUsageCtx = document.getElementById('waterUsageChart');
+            if (waterUsageCtx) {
+                // Use the line chart function, but with axes shown (hideAxes = false)
+                createLineChart(waterUsageCtx, [150, 180, 160, 140, 155, 170, 165], 'Water Consumption (Liters/Hectare)', false);
+            }
+
+            // Disease Occurrence Chart (Pie Chart)
+            const diseaseCtx = document.getElementById('diseaseChart');
+            if (diseaseCtx) {
+                createPieChart(diseaseCtx, [60, 25, 15], ['Leaf Blight (60%)', 'Pest Infestation (25%)', 'Nutrient Deficiency (15%)'], 'Distribution of Disease Cases');
+            }
+        });
+    </script>
+</body>
+</html>

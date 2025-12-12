@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        .admin-card-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="app-name">Smart Agriculture System</div>
+        <div class="farm-info">Role: Admin/Officer</div>
+        <div class="top-bar-actions">
+            <a href="#" title="Notifications">🔔 (5)</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Admin Control Panel</h1>
+        
+        <div class="dashboard-grid admin-grid">
+            
+            <!-- Total Farms Card -->
+            <div class="card">
+                <div class="card-title">Total Farms</div>
+                <div class="admin-card-value">154</div>
+            </div>
+
+            <!-- Active Sensors Card -->
+            <div class="card">
+                <div class="card-title">Active Sensors</div>
+                <div class="admin-card-value">450</div>
+            </div>
+
+            <!-- Disease Cases Card -->
+            <div class="card">
+                <div class="card-title">Disease Cases (Last 7 Days)</div>
+                <div class="admin-card-value status-critical">12</div>
+            </div>
+
+            <!-- Water Usage Reports Card -->
+            <div class="card">
+                <div class="card-title">Water Usage Reports</div>
+                <div class="admin-card-value">45</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Farmer Monitoring Table</div>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Farmer</th>
+                        <th>Area</th>
+                        <th>Crop</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Sector A</td>
+                        <td>Rice</td>
+                        <td class="status-critical">High Temp Alert</td>
+                        <td><button class="btn btn-primary" style="padding: 5px 10px;">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>Sector B</td>
+                        <td>Wheat</td>
+                        <td class="status-normal">Normal</td>
+                        <td><button class="btn btn-primary" style="padding: 5px 10px;">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>Ravi Kumar</td>
+                        <td>Sector C</td>
+                        <td>Corn</td>
+                        <td class="status-warning">Low Moisture</td>
+                        <td><button class="btn btn-primary" style="padding: 5px 10px;">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
